@@ -31,9 +31,3 @@ echo "[TASK 6] Install Auto-Complete"
 apt-get update
 apt-get install bash-completion -y
 curl https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker -o /etc/bash_completion.d/docker.sh
-
-echo "[TASK 7] use docker without sudo"
-# 將目前使用者新增到 docker 群組並更改其預設 shell 為 /bin/bash
-usermod -aG docker -s /bin/bash $(whoami)
-# 切換到 docker 群組
-newgrp docker
